@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vant@2.12/lib/vant.min.js"></script>
+    <title>测试网页</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="app"
+        style="display: flex; align-items: center; flex-direction: column; justify-content: center; background-color: blanchedalmond; width: 100vw; min-height: 100vh;">
+        <span>功能操作</span>
+        <div style="padding-bottom: 10px;">
+            <van-button type="info" @click="gotoBaidu">前往百度</van-button>
+        </div>
+        <div style="padding-bottom: 10px;">
+            <van-button type="info" @click="closeWebView">关闭网页</van-button>
+        </div>
+        <div style="padding-bottom: 10px;">
+            <van-button type="info" @click="openCommonPage">打开普通页面</van-button>
+        </div>
+
+        <div style="padding-bottom: 10px;">
+            <van-button type="info" @click="open404Page">打开404页面</van-button>
+        </div>
+
+        <div style="padding-bottom: 10px;">
+            <van-button type="info" @click="open404Alert">打开升级弹窗</van-button>
+        </div>
+
+        <span>样式设置</span>
+        <div style="padding-bottom: 10px;">
+            <van-button type="info" @click="hidenNav">隐藏导航栏</van-button>
+        </div>
+        <div style="padding-bottom: 10px;">
+            <van-button type="info" @click="navColor">导航栏颜色</van-button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+        },
+        methods: {
+            gotoBaidu() {
+                window.location.href = "https://www.baidu.com";
+            },
+
+            closeWebView() {
+                window.webkit.messageHandlers.action.postMessage({ "url": "appscheme://demo/action/close?dataJSON=%7B%22type%22%3A%20%22pop%22%7D" });
+            },
+
+            openCommonPage() {
+                window.webkit.messageHandlers.action.postMessage({ "url": "appscheme://demo/page1" });
+            },
+
+            open404Page() {
+                window.webkit.messageHandlers.action.postMessage({ "url": "appscheme://xxx/xxx?dataJSON=%7B%22type%22%3A%201%7D" });
+            },
+
+            open404Alert() {
+                window.webkit.messageHandlers.action.postMessage({ "url": "appscheme://xxx/xxx?dataJSON=%7B%22type%22%3A%202%7D" });
+            },
+
+            hidenNav() {
+                window.webkit.messageHandlers.style.postMessage({
+                    "showNavigationBar": false,
+                    "notSupportGesture": false,
+                    "notSupportBounces": false
+                });
+            },
+
+            navColor(){
+                window.webkit.messageHandlers.style.postMessage({
+                    "showNavigationBar": true,
+                    "scrollNavigationBar": true,
+                    "backgroundColor": "#FF333333",
+                    "barTinColor": "#ffffffff",
+                    "statusBarBlack": true,
+                    "rightButtons": [
+                        {
+                            "text": "分享",
+                            "icon": "https://abc.xxx.com/img/icon.png",
+                            "action": "appSchema/path/path"
+                        },
+                        {
+                            "text": "举报",
+                            "icon": "https://abc.xxx.com/img/icon.png",
+                            "action": "appSchema/path/path"
+                        }
+                    ],
+                    "notSupportGesture": true,
+                    "notSupportBounces": true
+                });
+            },
+        },
+    });
+    Vue.use(vant.Lazyload);
+</script>

@@ -1,0 +1,86 @@
+{
+    "pages": [
+        {
+            "name": "普通功能页面-无参数-push",
+            "path": "appscheme://demo/page1"
+        },
+        {
+            "name": "普通功能页面-无参数-present",
+            "path": "appscheme://demo/page1?dataJSON=%7B%22showType%22%3A%201%7D"
+        },
+        {
+            "name": "普通功能页面-参数",
+            "path": "appscheme://demo/page2?dataJSON=%7B%22a%22%3A%20%22%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%96%87%E6%9C%AC%22%2C%20%22b%22%3A%20123%7D"
+        },
+        {
+            "name": "webview-直接打开",
+            "path": "https://www.baidu.com"
+        },
+        {
+            "name": "webview-appscheme打开",
+            "path": "appscheme://demo/web?dataJSON=%7B%22url%22%3A%20%22https%253A%252F%252Fwww.pgyer.com%252Fapp%252Fdistribution%253Ffrom%253DhomePageBanner%22%7D"
+        },
+        {
+            "name": "扫一扫",
+            "path": "appscheme://demo/scanCode"
+        },
+        {
+            "name": "不存在页面",
+            "path": "appscheme://xxx/xxx?dataJSON=%7B%22type%22%3A%201%7D"
+        }
+    ],
+    "functions": [
+        {
+            "name": "分享",
+            "path": "appscheme://demo/share?dataJSON=%7B%22a%22%3A%20%22%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%96%87%E6%9C%AC%22%2C%20%22b%22%3A%20123%7D"
+        },
+        {
+            "name": "alert(可自定义样式)",
+            "path": "appscheme://demo/alert?dataJSON=%7B%22title%22%3A%20%22%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA%22%2C%20%22message%22%3A%20%22%E8%BF%99%E6%98%AF%E5%BC%B9%E7%AA%97%E5%86%85%E5%AE%B9%22%2C%20%22actions%22%3A%20%5B%7B%22name%22%3A%20%22%E6%89%93%E5%BC%80%E6%99%AE%E9%80%9A%E9%A1%B5%E9%9D%A2%22%2C%20%22path%22%3A%20%22appscheme%3A%2F%2Fdemo%2Fpage1%22%2C%20%22type%22%3A%200%7D%2C%20%7B%22name%22%3A%20%22%E6%89%93%E5%BC%80H5%22%2C%20%22path%22%3A%20%22https%3A%2F%2Fwww.baidu.com%22%7D%5D%7D"
+        },
+        {
+            "name": "sheet(可自定义样式)",
+            "path": "appscheme://demo/alert?dataJSON=%7B%22title%22%3A%20%22%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA%22%2C%20%22message%22%3A%20%22%E8%BF%99%E6%98%AF%E5%BC%B9%E7%AA%97%E5%86%85%E5%AE%B9%22%2C%20%22actions%22%3A%20%5B%7B%22name%22%3A%20%22%E6%89%93%E5%BC%80%E6%99%AE%E9%80%9A%E9%A1%B5%E9%9D%A2%22%2C%20%22path%22%3A%20%22appscheme%3A%2F%2Fdemo%2Fpage1%22%2C%20%22type%22%3A%200%7D%2C%20%7B%22name%22%3A%20%22%E6%89%93%E5%BC%80H5%22%2C%20%22path%22%3A%20%22https%3A%2F%2Fwww.baidu.com%22%7D%5D%7D"
+        },
+        {
+            "name": "openURL-打电话",
+            "path": "appscheme://demo/openURL?dataJSON=%7B%22url%22%3A%20%22telprompt%3A10086%22%7D"
+        },
+        {
+            "name": "openURL-发短信",
+            "path": "appscheme://demo/openURL?dataJSON=%7B%22url%22%3A%20%22sms%3A%2F%2F1234567891%22%7D"
+        },
+        {
+            "name": "openURL-发邮件",
+            "path": "appscheme://demo/openURL?dataJSON=%7B%22url%22%3A%20%22mailto%3A123%40qq.com%22%7D"
+        },
+        {
+            "name": "openURL-App Store 搜索app",
+            "path": "appscheme://demo/openURL?dataJSON=%7B%22url%22%3A%20%22itms-apps%3A%2F%2Fsearch.itunes.apple.com%2FWebObjects%2FMZSearch.woa%2Fwa%2Fsearch%3Fmedia%3Dsoftware%26term%3DQQ%22%7D"
+        },
+        {
+            "name": "openURL-打开微信",
+            "path": "appscheme://demo/openURL?dataJSON=%7B%22url%22%3A%20%22weixin%3A%2F%2F%22%7D"
+        },
+        {
+            "name": "openURL-打开支付宝",
+            "path": "appscheme://demo/openURL?dataJSON=%7B%22url%22%3A%20%22alipayqr%3A%2F%2Fplatformapi%2Fstartapp%3FsaId%3D10000007%22%7D"
+        },
+        {
+            "name": "打开导航",
+            "path": "appscheme://demo/mapNavi?dataJSON=%7B%22latitude%22%3A%2031.865557%2C%20%22longitude%22%3A%20117.281589%7D"
+        },
+        {
+            "name": "打开导航-高德",
+            "path": "appscheme://demo/openURL?dataJSON=%7B%22url%22%3A%20%22iosamap%253A%252F%252Fnavi%253FsourceApplication%253Dxxx%2526backScheme%253Dxxx%2526lat%253D31.865557%2526lon%253D117.281589%2526dev%253D0%2526style%253D2%22%7D"
+        },
+        {
+            "name": "token失效",
+            "path": "appscheme://demo/tokenInvalid?dataJSON=%7B%22message%22%3A%20%22%E6%82%A8%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%9C%A8%E5%A4%96%E6%98%9F%E7%90%83%E7%99%BB%E5%BD%95%E4%BA%86%EF%BC%8C%E7%8E%B0%E5%9C%A8%E8%BF%94%E5%9B%9E%E5%88%B0%E7%99%BB%E5%BD%95%E9%A1%B5%EF%BC%8C%E8%AF%B7%E6%82%A8%E9%87%8D%E6%96%B0%E7%99%BB%E5%BD%95%22%7D"
+        },
+        {
+            "name": "不存在功能",
+            "path": "appscheme://xxx/xxx?dataJSON=%7B%22type%22%3A%202%7D"
+        }
+    ]
+}
